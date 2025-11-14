@@ -35,16 +35,16 @@
     <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 </head>
 
-<body class="font-sans antialiased bg-white text-gray-900 dark:bg-gray-900 shadow dark:shadow-md">
+<body class="font-sans antialiased bg-white/70 text-gray-900 dark:bg-gray-700 shadow dark:shadow-md">
     <div class="min-h-screen flex flex-col">
         {{-- Header / Navigation --}}
         @include('layouts.navigation')
 
         {{-- Optional header slot --}}
         @isset($header)
-            <header class="bg-white dark:bg-gray-900 shadow dark:shadow-md">
+            <header class="bg-white/70 dark:bg-gray-700 shadow dark:shadow-md">
                 <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    <div class="text-gray-800 dark:text-gray-100">
+                    <div class="text-gray-700 dark:text-gray-100">
                         {{ $header }}
                     </div>
                 </div>

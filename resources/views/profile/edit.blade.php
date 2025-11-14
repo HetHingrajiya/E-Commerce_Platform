@@ -10,7 +10,7 @@
         </div>
     </x-slot>
 
-    <div class="py-12 bg-gradient-to-br from-blue-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
+    <div class="py-12" style="background: linear-gradient(135deg, rgba(126, 206, 164, 0.85) 0%, rgba(74, 129, 216, 0.85) 100%);">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
 

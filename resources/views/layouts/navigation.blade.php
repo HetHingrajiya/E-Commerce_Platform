@@ -26,7 +26,7 @@
   }"
   x-init="initTheme()"
   @keydown.escape.window="profileOpen = false; mobileOpen = false"
-  class="sticky top-0 z-50 bg-white/95 dark:bg-gray-900/90 backdrop-blur-sm border-b border-gray-100/60 dark:border-gray-800/60"
+  class="sticky top-0 z-50 bg-white/60 dark:bg-gray-700/90 backdrop-blur-sm border-b border-gray-100/60 dark:border-gray-800/60"
 >
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center gap-4 py-3 md:py-4">

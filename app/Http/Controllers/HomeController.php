@@ -3,18 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Banner;
+
 use App\Models\Product; // optional - uses Product if present
 
 class HomeController extends Controller
 {
     public function index(Request $request)
     {
-        // Load active banners ordered by sort_order asc
-        $banners = Banner::query()
-            ->where('active', true)
-            ->orderBy('sort_order', 'asc')
-            ->get(['id', 'title', 'subtitle', 'image', 'alt', 'cta_text', 'cta_url']);
 
         // Featured products if the Product model/table exists; otherwise an empty collection
         $products = collect();
@@ -28,11 +23,6 @@ class HomeController extends Controller
             }
         }
 
-        // Ensure banner image paths are absolute URLs (optional convenience)
-        $banners = $banners->map(function ($b) {
-            $b->image = $this->normalizeImageUrl($b->image);
-            return $b;
-        });
 
         // --- NEW: preload wishlist IDs to avoid N+1 queries in the view ---
         $wishlistIds = [];
@@ -46,7 +36,7 @@ class HomeController extends Controller
             $wishlistIds = [];
         }
 
-        return view('home', compact('banners', 'products', 'wishlistIds'));
+        return view('home', compact( 'products', 'wishlistIds'));
     }
 
     // normalizes local paths to absolute URLs (if image is relative)
