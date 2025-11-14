@@ -316,9 +316,9 @@
 
                         <!-- Right Side - Image (Modern Gradient) -->
                         <div
-                            class="relative h-full hidden md:flex justify-center items-center order-1 md:order-2 bg-gradient-to-bl from-indigo-50 via-purple-50 to-pink-50 dark:from-indigo-900/40 dark:via-purple-900/40 dark:to-pink-900/40 overflow-hidden p-4 sm:p-5 md:p-6 lg:p-8">
+                            class="relative h-full hidden md:flex justify-center items-center order-1 md:order-2 bg-gradient-to-bl from-indigo-50 via-purple-50 to-pink-50 dark:from-indigo-500/40 dark:via-purple-500/40 dark:to-pink-500/40 overflow-hidden p-4 sm:p-5 md:p-6 lg:p-8">
                             <!-- Animated background pattern -->
-                            <div class="absolute inset-0 opacity-30">
+                            <div class="absolute inset-0 opacity-40">
                                 <div
                                     class="absolute top-10 right-10 w-32 h-32 bg-gradient-to-br from-indigo-300 to-purple-300 rounded-full blur-2xl animate-float">
                                 </div>
@@ -387,9 +387,21 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
                 @php
                     $featureColors = [
-                        ['icon_bg' => 'from-blue-100 to-cyan-100 dark:from-blue-900/40 dark:to-cyan-900/40', 'icon_color' => 'text-blue-600 dark:text-blue-400', 'hover_border' => 'hover:border-blue-300 dark:hover:border-blue-700'],
-                        ['icon_bg' => 'from-emerald-100 to-teal-100 dark:from-emerald-900/40 dark:to-teal-900/40', 'icon_color' => 'text-emerald-600 dark:text-emerald-400', 'hover_border' => 'hover:border-emerald-300 dark:hover:border-emerald-700'],
-                        ['icon_bg' => 'from-orange-100 to-amber-100 dark:from-orange-900/40 dark:to-amber-900/40', 'icon_color' => 'text-orange-600 dark:text-orange-400', 'hover_border' => 'hover:border-orange-300 dark:hover:border-orange-700'],
+                        [
+                            'icon_bg' => 'from-blue-100 to-cyan-100 dark:from-blue-900/40 dark:to-cyan-900/40',
+                            'icon_color' => 'text-blue-600 dark:text-blue-400',
+                            'hover_border' => 'hover:border-blue-300 dark:hover:border-blue-700',
+                        ],
+                        [
+                            'icon_bg' => 'from-emerald-100 to-teal-100 dark:from-emerald-900/40 dark:to-teal-900/40',
+                            'icon_color' => 'text-emerald-600 dark:text-emerald-400',
+                            'hover_border' => 'hover:border-emerald-300 dark:hover:border-emerald-700',
+                        ],
+                        [
+                            'icon_bg' => 'from-orange-100 to-amber-100 dark:from-orange-900/40 dark:to-amber-900/40',
+                            'icon_color' => 'text-orange-600 dark:text-orange-400',
+                            'hover_border' => 'hover:border-orange-300 dark:hover:border-orange-700',
+                        ],
                     ];
                 @endphp
                 @foreach ([['icon' => 'M3 7h18M3 12h18M3 17h18', 'title' => 'Wide Selection', 'text' => 'Explore thousands of quality products from trusted brands worldwide.'], ['icon' => 'M3 12h18M12 3v18', 'title' => 'Secure Checkout', 'text' => 'Your payments are protected with bank-level SSL encryption & security.'], ['icon' => 'M12 8v4l3 3', 'title' => 'Fast Delivery', 'text' => 'Quick shipping with real-time tracking & support available 24/7.']] as $i => $f)
@@ -430,20 +442,26 @@
                         class="group relative h-full flex flex-col rounded-xl overflow-hidden transition-all duration-500 transform hover:scale-105">
 
                         <!-- Card Background with Gradient -->
-                        <div class="absolute inset-0 bg-gradient-to-br from-indigo-500 via-purple-400 to-pink-200 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl"></div>
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-indigo-500 via-purple-400 to-pink-200 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl">
+                        </div>
 
                         <!-- White Card Container -->
-                        <div class="relative bg-white/60 dark:bg-gray-700 rounded-xl overflow-hidden h-full flex flex-col shadow-lg hover:shadow-2xl transition-all duration-500">
+                        <div
+                            class="relative bg-white/60 dark:bg-gray-700 rounded-xl overflow-hidden h-full flex flex-col shadow-lg hover:shadow-2xl transition-all duration-500">
 
-                            <!-- Image Section -->
-                            <div class="relative w-full h-56 sm:h-64 overflow-hidden bg-gradient-to-br from-slate-100 to-slate-200 dark:from-gray-800 dark:to-gray-700">
+                            <!-- Image Section (ADDED BORDER HERE) -->
+                            <div
+                                class="relative w-full h-56 sm:h-64 overflow-hidden bg-gradient-to-br from-slate-100 to-slate-200 dark:from-gray-800 dark:to-gray-700 rounded-xl p-4 sm:p-5 border-2 border-transparent group-hover:border-indigo-400/50 dark:group-hover:border-indigo-600/50 duration-500">
+
                                 <img src="{{ $product->image }}"
                                     class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                                     loading="lazy" alt="{{ $product->name }}">
 
                                 <!-- Overlay Gradient -->
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                                </div>
 
                             </div>
 
@@ -451,7 +469,8 @@
                             <div class="flex-1 p-5 sm:p-6 flex flex-col justify-between">
                                 <!-- Title & Rating -->
                                 <div>
-                                    <h3 class="text-base sm:text-lg font-bold text-gray-900 dark:text-gray-100 line-clamp-2 mb-2 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                                    <h3
+                                        class="text-base sm:text-lg font-bold text-gray-900 dark:text-gray-100 line-clamp-2 mb-2 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
                                         {{ $product->name }}
                                     </h3>
                                     <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 line-clamp-2 mb-3">
@@ -460,13 +479,16 @@
                                 </div>
 
                                 <!-- Divider -->
-                                <div class="h-px bg-gradient-to-r from-transparent via-indigo-300 to-transparent dark:via-indigo-700 my-3"></div>
+                                <div
+                                    class="h-px bg-gradient-to-r from-transparent via-indigo-300 to-transparent dark:via-indigo-700 my-3">
+                                </div>
 
                                 <!-- Price & CTA -->
                                 <div class="space-y-3">
                                     <div class="flex items-center justify-between">
                                         <div class="flex flex-col">
-                                            <span class="text-2xl font-black bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-indigo-400 dark:to-purple-400 bg-clip-text text-transparent">
+                                            <span
+                                                class="text-2xl font-black bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-indigo-400 dark:to-purple-400 bg-clip-text text-transparent">
                                                 ${{ number_format($product->price, 2) }}
                                             </span>
                                             <span class="text-xs text-gray-500 dark:text-gray-400 line-through">
@@ -498,12 +520,13 @@
         </div>
     </section>
 
+
     <!-- CTA -->
     <section
         class="w-full px-3 sm:px-4 md:px-6 lg:px-0 py-8 md:py-16 dark:from-indigo-900/30 dark:via-purple-900/30 dark:to-pink-900/30">
         <div class="w-full max-w-7xl mx-auto">
             <div
-                class="relative overflow-hidden bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 dark:from-indigo-800 dark:via-purple-800 dark:to-pink-800 border border-indigo-400/30 dark:border-indigo-600/30 p-6 sm:p-8 md:p-10 lg:p-12 rounded-2xl shadow-2xl backdrop-blur-sm">
+                class="relative overflow-hidden bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 dark:from-indigo-600 dark:via-purple-600 dark:to-pink-600 border border-indigo-400/30 dark:border-indigo-600/30 p-6 sm:p-8 md:p-10 lg:p-12 rounded-2xl shadow-2xl backdrop-blur-sm">
                 <!-- Decorative elements -->
                 <div class="absolute top-0 right-0 w-40 h-40 bg-white/5 rounded-full -mr-20 -mt-20 blur-2xl"></div>
                 <div class="absolute bottom-0 left-0 w-40 h-40 bg-white/5 rounded-full -ml-20 -mb-20 blur-2xl"></div>
